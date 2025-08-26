@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゆうたの紹介サイト</title>
+  <style>
+    /* 基本スタイル */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e90ff;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 1.1em;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1e90ff;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      color: #1e90ff;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #1e90ff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .profile img {
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: -20px;
+    }
+
+    .skills ul, .portfolio ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .skills li, .portfolio li {
+      background-color: #ffffff;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e90ff;
+      color: white;
+    }
+
+    /* スマホ対応 */
+    @media(max-width: 600px){
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ゆうた</h1>
+    <p>プログラミング&パワーリフターの自己紹介</p>
+  </header>
+
+  <nav>
+    <a href="#profile">プロフィール</a>
+    <a href="#skills">スキル</a>
+    <a href="#portfolio">制作物</a>
+    <a href="#kinntore">筋トレ</a>
+  </nav>
+
+  <section id="profile" class="profile">
+    <h2>プロフィール</h2>
+    <img src="IMG_4392.jpg" alt="プロフィール写真">
+    <p>こんにちは！私はゆうたです。プログラミング歴１ヶ月、パワーリフティング９ヶ月の初心者ですが、プログラミングやパワーリフティングを学びながらサイト開発や筋トレに取り組んでいます。</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>スキル</h2>
+    <ul>
+      <li>HTML / CSS / JavaScript</li>
+      <li>Firebaseでデータ保存・認証</li>
+      <li>Webアプリ制作（ToDoアプリ、日記アプリなど）</li>
+    </ul>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <h2>制作物</h2>
+    <ul>
+      <li>地震リアルタイムアプリ</li>
+      <a href="https://kotoho7.github.io/scratch-realtime-earthquake-viewer-page/" target="_blank" rel="noopener noreferrer">
+  地震リアルタイムビューアーアプリ
+      </a>
+      <li>BURST LIMIT&BURST LIMIT北見の大会写真アプリ</li>
+            <a href="https://kzct3921.github.io/BURST-LIMIT-/index.html" target="_blank" rel="noopener noreferrer">
+  BURST LIMIT&BURST LIMIT北見の大会写真アプリ
+      </a>
+      <li>ゲームのチーム公式サイトを作成</li>
+                  <a href="https://rule-e-sports.github.io/Ruler-E-sports-/#top" target="_blank" rel="noopener noreferrer">
+  ゲームのチーム公式サイト
+      </a>
+      <li>当サイトの制作</li>
+    </ul>
+  </section>
+
+    <section id="kinntore" class="portfolio">
+    <h2>筋トレ</h2>
+    <ul>
+      <li>ベンチプレス 50キロ</li>
+      <li>スクワット 65キロ</li>
+      <li>デッドリフト 85キロ</li>
+    </ul>
+  </section>
+
+    <section id="" class="portfolio">
+    <h2>筋トレ大会</h2>
+    <ul>
+      <li>ベンチプレス 47.5キロ</li>
+      <li>スクワット 67.5キロ</li>
+      <li>デッドリフト 82.5キロ</li>
+    </ul>
+  </section>
+
+    <section id="" class="portfolio">
+    <h2>筋トレ大会</h2>
+    <ul>
+      <li>ベンチプレス 47.5キロ</li>
+      <li>スクワット 67.5キロ</li>
+      <li>デッドリフト 82.5キロ</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 ゆうた
+  </footer>
+
+</body>
+</html>
