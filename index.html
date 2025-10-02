@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ゆうたの紹介サイト</title>
+  <title>ゆうたの自己紹介サイト</title>
   <style>
     /* 基本スタイル */
     body {
@@ -14,20 +14,30 @@
     }
 
     header {
-      background-color: #1e90ff;
+      background: linear-gradient(120deg, #1e90ff, #6a5acd, #00bfff);
+      background-size: 300% 300%;
       color: white;
-      padding: 30px 20px;
+      padding: 80px 20px;
       text-align: center;
+      animation: gradientMove 10s ease infinite;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 2.5em;
+      overflow: hidden;
+      border-right: .15em solid white;
+      white-space: nowrap;
+      width: 0;
+      animation: typing 3s steps(12, end) forwards, blink .75s step-end infinite;
     }
 
     header p {
-      margin: 5px 0 0;
-      font-size: 1.1em;
+      margin: 15px 0 0;
+      font-size: 1.2em;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+      animation-delay: 3s;
     }
 
     nav {
@@ -46,12 +56,31 @@
       text-decoration: none;
       color: #1e90ff;
       font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #1e90ff;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       max-width: 800px;
       margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
     }
 
     section h2 {
@@ -65,7 +94,11 @@
     .profile img {
       max-width: 200px;
       border-radius: 50%;
-      margin-bottom: -20px;
+      margin-bottom: 20px;
+      padding: 5px;
+      background: linear-gradient(45deg, #1e90ff, #6a5acd, #00bfff, #1e90ff);
+      background-size: 400% 400%;
+      animation: glowBorder 6s linear infinite;
     }
 
     .skills ul, .portfolio ul {
@@ -84,8 +117,10 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #1e90ff;
+      background: linear-gradient(270deg, #1e90ff, #6a5acd, #00bfff);
+      background-size: 600% 600%;
       color: white;
+      animation: gradientMove 10s ease infinite;
     }
 
     /* スマホ対応 */
@@ -94,6 +129,32 @@
         flex-direction: column;
         gap: 10px;
       }
+    }
+
+    /* アニメーション定義 */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowBorder {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
   </style>
 </head>
@@ -114,14 +175,13 @@
   <section id="profile" class="profile">
     <h2>プロフィール</h2>
     <img src="IMG_4392.jpg" alt="プロフィール写真">
-    <p>こんにちは！私はゆうたです。プログラミング歴１ヶ月、パワーリフティング９ヶ月の初心者ですが、プログラミングやパワーリフティングを学びながらサイト開発や筋トレに取り組んでいます。</p>
+    <p>こんにちは！私はゆうたです。プログラミング歴2ヶ月、パワーリフティング10ヶ月の初心者ですが、プログラミングやパワーリフティングを学びながらサイト開発や筋トレに取り組んでいます。</p>
   </section>
 
   <section id="skills" class="skills">
     <h2>スキル</h2>
     <ul>
       <li>HTML / CSS / JavaScript</li>
-      <li>Firebaseでデータ保存・認証</li>
       <li>Webアプリ制作（ToDoアプリ、日記アプリなど）</li>
     </ul>
   </section>
@@ -131,50 +191,66 @@
     <ul>
       <li>地震リアルタイムアプリ</li>
       <a href="https://kotoho7.github.io/scratch-realtime-earthquake-viewer-page/" target="_blank" rel="noopener noreferrer">
-  地震リアルタイムビューアーアプリ
+        地震リアルタイムビューアーアプリ
       </a>
       <li>BURST LIMIT&BURST LIMIT北見の大会写真アプリ</li>
-            <a href="https://kzct3921.github.io/BURST-LIMIT-/index.html" target="_blank" rel="noopener noreferrer">
-  BURST LIMIT&BURST LIMIT北見の大会写真アプリ
+      <a href="https://kzct3921.github.io/BURST-LIMIT-/index.html" target="_blank" rel="noopener noreferrer">
+        BURST LIMIT大会写真アプリ
       </a>
       <li>ゲームのチーム公式サイトを作成</li>
-                  <a href="https://rule-e-sports.github.io/Ruler-E-sports-/#top" target="_blank" rel="noopener noreferrer">
-  ゲームのチーム公式サイト
+      <a href="https://rule-e-sports.github.io/Ruler-E-sports-/#top" target="_blank" rel="noopener noreferrer">
+        ゲームのチーム公式サイト
+      </a>
+      <li>プログラミング基本制作有能サイト紹介</li>
+      <a href="https://kzct3921.github.io/GreatMatch/" target="_blank" rel="noopener noreferrer">
+        制作有能サイト紹介
       </a>
       <li>当サイトの制作</li>
     </ul>
   </section>
 
-    <section id="kinntore" class="portfolio">
-    <h2>筋トレ</h2>
+  <section id="kinntore" class="portfolio">
+    <h2>記録</h2>
+    <ul>
+      <li>ベンチプレス 52.5キロ</li>
+      <li>スクワット 75キロ</li>
+      <li>デッドリフト 87.5キロ</li>
+    </ul>
+  </section>
+
+  <section class="portfolio">
+    <h2>パワーリフティング大会</h2>
+    <ul>
+      <li>ベンチプレス 47.5キロ</li>
+      <li>スクワット 67.5キロ</li>
+      <li>デッドリフト 82.5キロ</li>
+    </ul>
+  </section>
+
+  <section class="portfolio">
+    <h2>シングルベンチ大会</h2>
     <ul>
       <li>ベンチプレス 50キロ</li>
-      <li>スクワット 65キロ</li>
-      <li>デッドリフト 85キロ</li>
-    </ul>
-  </section>
-
-    <section id="" class="portfolio">
-    <h2>筋トレ大会</h2>
-    <ul>
-      <li>ベンチプレス 47.5キロ</li>
-      <li>スクワット 67.5キロ</li>
-      <li>デッドリフト 82.5キロ</li>
-    </ul>
-  </section>
-
-    <section id="" class="portfolio">
-    <h2>筋トレ大会</h2>
-    <ul>
-      <li>ベンチプレス 47.5キロ</li>
-      <li>スクワット 67.5キロ</li>
-      <li>デッドリフト 82.5キロ</li>
     </ul>
   </section>
 
   <footer>
-    &copy; 2025 ゆうた
+    &copy; 2025 ゆうた　(バージョン1.1)
   </footer>
 
+  <!-- スクロールアニメーション -->
+  <script>
+    const items = document.querySelectorAll("section, li");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = "translateY(0)";
+        }
+      });
+    }, { threshold: 0.2 });
+
+    items.forEach(item => observer.observe(item));
+  </script>
 </body>
 </html>
